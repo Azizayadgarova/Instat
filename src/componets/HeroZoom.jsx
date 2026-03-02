@@ -92,7 +92,7 @@ const HeroZoom = () => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full mt-[100px]   h-screen bg-black flex items-center justify-center overflow-hidden"
+      className="relative w-full mt-[100px]   h-screen bg-[rgba(14,18,27,1)] flex items-center justify-center overflow-hidden"
     >
       <div
         ref={zoomWrapperRef}
