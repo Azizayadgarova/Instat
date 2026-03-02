@@ -18,14 +18,28 @@ const HeroZoom = () => {
   // Mobile detect
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
+
     check();
     window.addEventListener("resize", check);
+
     return () => window.removeEventListener("resize", check);
+  }, []);
+
+  // ⭐ Horizontal scroll fix (Animationga tegmaydi)
+  useEffect(() => {
+    document.body.style.overflowX = "hidden";
+    document.documentElement.style.overflowX = "hidden";
+
+    return () => {
+      document.body.style.overflowX = "";
+      document.documentElement.style.overflowX = "";
+    };
   }, []);
 
   // Light particles
   const particles = useMemo(() => {
     if (isMobile) return [];
+
     return Array.from({ length: 12 }, () => ({
       size: Math.random() * 0.6 + 0.3 + "rem",
       top: Math.random() * 100 + "%",
@@ -124,35 +138,12 @@ const HeroZoom = () => {
       {/* Phone */}
       <div
         ref={phoneWrapperRef}
-        className="
-          relative
-          w-full
-          max-w-[95vw]
-          md:max-w-[85vw]
-          lg:max-w-[850px]
-          aspect-[16/9]
-          md:aspect-auto
-          md:h-[clamp(420px,60vh,780px)]
-          mt-[2vh]
-          md:mt-[5vh]
-        "
+        className="relative w-full max-w-[95vw] md:max-w-[85vw] lg:max-w-[850px] aspect-[16/9] md:aspect-auto md:h-[clamp(420px,60vh,780px)] mt-[2vh] md:mt-[5vh]"
       >
         {/* Screen */}
         <div
           ref={screenRef}
-          className="
-            absolute
-            top-[5%]
-            left-[1%]
-            w-[98%]
-            h-[90%]
-            rounded-[2rem]
-            md:rounded-[3rem]
-            lg:rounded-[4.5rem]
-            overflow-hidden
-            
-            shadow-2xl
-          "
+          className="absolute top-[5%] left-[1%] w-[98%] h-[90%] rounded-[2rem] md:rounded-[3rem] lg:rounded-[4.5rem] overflow-hidden shadow-2xl"
         >
           <img
             src={studentWebp}
