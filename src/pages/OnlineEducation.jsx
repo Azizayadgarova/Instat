@@ -9,7 +9,7 @@ import MentorsSection from '../componets/MentorsSection'
 import ModernEducation from '../componets/ModernEducation'
 import Statistika from '../componets/Statistika'
 import Testimonials from '../componets/Testimonials'
-import TopComponent from '../componets/TopComponent'
+// import TopComponent from '../componets/TopComponent'
 import TopFooter from '../componets/TopFooter'
 import Footer from './../componets/Footer'
 
@@ -20,7 +20,7 @@ const OnlineEducation = () => {
 			<Statistika />
 			<Education />
 			<ModernEducation />
-			<TopComponent />
+			{/* <TopComponent /> */}
 			<HeroZoom />
 			<CoursesSection />
 			<MentorsSection />
