@@ -70,7 +70,7 @@ const courses = [
 
 const CoursesSection = () => {
 	return (
-		<section className='relative w-full bg-[#0E121B] flex flex-col items-center justify-center overflow-hidden min-h-screen py-20'>
+		<section className='relative w-full bg-[#0E121B]   mt-[20px] flex flex-col items-center justify-center overflow-hidden min-h-screen py-20'>
 
 			{/* Background */}
 			<div
